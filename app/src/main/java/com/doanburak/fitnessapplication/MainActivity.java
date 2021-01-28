@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,4 +45,38 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void addTraining(View view){
+
+        Intent toAddTraining = new Intent(MainActivity.this, AddTrainingActivity.class);
+        startActivity(toAddTraining);
+
+    }
+
+    public void showTrainings(View view){
+
+        Intent toShowTraining = new Intent(MainActivity.this, ShowTrainingsActivity.class);
+        startActivity(toShowTraining);
+
+    }
+
+    public void timekeeper(View view){
+
+        Intent toTimekeeper = new Intent(MainActivity.this, TimekeeperActivity.class);
+        startActivity(toTimekeeper);
+
+    }
+
+    public void weatherInfo(View view){
+
+        Intent toWeatherInfo = new Intent(MainActivity.this, WeatherInfoActivity.class);
+        startActivity(toWeatherInfo);
+
+    }
+
+    public void userInfo(View view){
+
+        Intent toUserInfo = new Intent(MainActivity.this, UserInfoActivity.class);
+        startActivity(toUserInfo);
+
+    }
 }

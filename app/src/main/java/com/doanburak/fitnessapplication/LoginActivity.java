@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
     public void intentToRegister(){
         Intent toRegister = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(toRegister);
-        finish();
     }
 
     public void login(View view){

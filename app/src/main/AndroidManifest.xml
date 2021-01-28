@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApplication">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".UserInfoActivity"></activity>
+        <activity android:name=".WeatherInfoActivity" />
+        <activity android:name=".TimekeeperActivity" />
+        <activity android:name=".ShowTrainingsActivity" />
+        <activity android:name=".AddTrainingActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
