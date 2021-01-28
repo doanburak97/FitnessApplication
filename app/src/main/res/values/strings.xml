@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">FitnessApplication</string>
+
+
+    <string-array name="cities">
+        <item>ISTANBUL</item>
+        <item>ANKARA</item>
+        <item>IZMIR</item>
+        <item>BURSA</item>
+        <item>ANTALYA</item>
+        <item>ADANA</item>
+        <item>KONYA</item>
+        <item>SANLIURFA</item>
+        <item>GAZIANTEP</item>
+        <item>KOCAELI</item>
+        <item>EDIRNE</item>
+        <item>SIVAS</item>
+        <item>ARTVIN</item>
+    </string-array>
 </resources>

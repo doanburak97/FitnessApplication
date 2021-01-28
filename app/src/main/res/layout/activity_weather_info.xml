@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".WeatherInfoActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <Spinner
+                android:id="@+id/sp_cities"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/magnifier" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_weatherIcon"
+            android:layout_width="250sp"
+            android:layout_height="250sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="75sp"
+            app:srcCompat="@drawable/cloud" />
+
+        <TextView
+            android:id="@+id/tv_weatherType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp"
+            android:gravity="center"
+            android:text="WEATHER TYPE" />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp"
+            android:gravity="center"
+            android:text="TEMPERATURE" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
