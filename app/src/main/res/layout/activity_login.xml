@@ -22,8 +22,8 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:src="@android:mipmap/sym_def_app_icon" />
+            android:layout_height="200sp"
+            app:srcCompat="@drawable/running" />
 
         <EditText
             android:id="@+id/et_email"

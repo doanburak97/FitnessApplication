@@ -19,7 +19,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     EditText et_email, et_password;
-    TextView tv_register;
 
     private FirebaseAuth mAuth;
 
