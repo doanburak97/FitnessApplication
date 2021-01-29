@@ -2,21 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.doanburak.fitnessapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FitnessApplication">
-        <activity android:name=".UserInfoActivity"></activity>
-        <activity android:name=".WeatherInfoActivity" />
-        <activity android:name=".TimekeeperActivity" />
-        <activity android:name=".ShowTrainingsActivity" />
-        <activity android:name=".AddTrainingActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
+        android:theme="@style/Theme.FitnessApplication"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/security"
+        >
+        <activity android:name=".activity.UserInfoActivity"></activity>
+        <activity android:name=".activity.WeatherInfoActivity" />
+        <activity android:name=".activity.TimekeeperActivity" />
+        <activity android:name=".activity.ShowTrainingsActivity" />
+        <activity android:name=".activity.AddTrainingActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

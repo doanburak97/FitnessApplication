@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeatherInfoActivity">
+    tools:context=".activity.WeatherInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
 
             <Spinner
                 android:id="@+id/sp_cities"
-                android:layout_width="0sp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4" />
 

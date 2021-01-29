@@ -1,8 +1,10 @@
-package com.doanburak.fitnessapplication;
+package com.doanburak.fitnessapplication.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.doanburak.fitnessapplication.R;
 
 public class TimekeeperActivity extends AppCompatActivity {
 
