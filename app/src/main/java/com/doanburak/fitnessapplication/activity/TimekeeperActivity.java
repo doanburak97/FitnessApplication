@@ -17,6 +17,8 @@ public class TimekeeperActivity extends AppCompatActivity {
 
     Thread threadMSec, threadSecond, threadMinute, threadHour;
 
+    int counterMSec, counterSec, counterMinute, counterHour;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +40,16 @@ public class TimekeeperActivity extends AppCompatActivity {
         iv_restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 tv_hour.setText("00");
                 tv_minute.setText("00");
                 tv_second.setText("00");
                 tv_MSec.setText("00");
+
+                counterMSec = 0;
+                counterSec = 0;
+                counterMinute = 0;
+                counterHour = 0;
 
             }
         });
@@ -55,11 +63,11 @@ public class TimekeeperActivity extends AppCompatActivity {
                     @Override
                     public void run(){
 
-                        int counter = 1;
+                        counterMSec = 1;
 
                         while(true){
 
-                            if (counter == 99){counter = 0;}
+                            if (counterMSec == 99){counterMSec = 0;}
 
                             try {
                                 sleep(1);
@@ -67,7 +75,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            int finalCounter = counter;
+                            int finalCounter = counterMSec;
                             updaterMSec.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -75,7 +83,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 }
                             });
 
-                            counter++;
+                            counterMSec++;
                         }
                     }
                 };
@@ -86,11 +94,11 @@ public class TimekeeperActivity extends AppCompatActivity {
                     @Override
                     public void run(){
 
-                        int counter = 1;
+                        counterSec = 1;
 
                         while(true){
 
-                            if (counter == 60){counter = 0;}
+                            if (counterSec == 60){counterSec = 0;}
 
                             try {
                                 sleep(1000);
@@ -98,7 +106,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            int finalCounter = counter;
+                            int finalCounter = counterSec;
                             updaterSecond.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -106,7 +114,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 }
                             });
 
-                            counter++;
+                            counterSec++;
                         }
                     }
                 };
@@ -117,11 +125,11 @@ public class TimekeeperActivity extends AppCompatActivity {
                     @Override
                     public void run(){
 
-                        int counter = 1;
+                        counterMinute = 1;
 
                         while(true){
 
-                            if (counter == 60){counter = 0;}
+                            if (counterMinute == 60){counterMinute = 0;}
 
                             try {
                                 sleep(60000);
@@ -129,7 +137,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            int finalCounter = counter;
+                            int finalCounter = counterMinute;
                             updaterMinute.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -137,7 +145,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 }
                             });
 
-                            counter++;
+                            counterMinute++;
                         }
                     }
                 };
@@ -148,11 +156,11 @@ public class TimekeeperActivity extends AppCompatActivity {
                     @Override
                     public void run(){
 
-                        int counter = 1;
+                        counterHour = 1;
 
                         while(true){
 
-                            if (counter == 24){counter = 0;}
+                            if (counterHour == 24){counterHour = 0;}
 
                             try {
                                 sleep(1440000);
@@ -160,7 +168,7 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            int finalCounter = counter;
+                            int finalCounter = counterHour;
                             updaterHour.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -168,24 +176,27 @@ public class TimekeeperActivity extends AppCompatActivity {
                                 }
                             });
 
-                            counter++;
+                            counterHour++;
                         }
                     }
                 };
                 threadHour.start();
-
             }
         });
 
         iv_pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 threadMSec.interrupt();
                 threadSecond.interrupt();
                 threadMinute.interrupt();
                 threadHour.interrupt();
+
             }
         });
+
+
     }
 
 }
