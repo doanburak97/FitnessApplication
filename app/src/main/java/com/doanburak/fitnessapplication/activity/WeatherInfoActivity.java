@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ import retrofit2.Response;
 
 public class WeatherInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView tv_weatherType, tv_temp;
+    TextView tv_feels, tv_temp;
     ImageView iv_search;
     ImageView iv_weatherIcon;
     Spinner sp_cities;
@@ -34,8 +33,8 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_weather_info);
 
         sp_cities = findViewById(R.id.sp_cities);
-        tv_weatherType = findViewById(R.id.tv_weatherType);
         tv_temp = findViewById(R.id.tv_temp);
+        tv_feels = findViewById(R.id.tv_feels);
         iv_search = findViewById(R.id.iv_search);
         iv_weatherIcon = findViewById(R.id.iv_weatherIcon);
 
@@ -57,6 +56,13 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
 
     }
 
+    private float convertKToC(float temp){
+
+        float result = (float)(temp - 272.15);
+        return result;
+
+    }
+
     private void getWeatherData(String name){
 
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
@@ -67,9 +73,11 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
 
-                tv_temp.setText("Temp: " + response.body().getMain().getTemp());
-                tv_weatherType.setText("Feels: " + response.body().getMain().getFeels());
-                //iv_weatherIcon.setImageResource(response.body().getWeather().getIcon());
+                float convertedTemp = convertKToC(Float.valueOf(response.body().getMain().getTemp()));
+                float convertedFeels = convertKToC(Float.valueOf(response.body().getMain().getFeels()));
+
+                tv_temp.setText("Temperature : " + String.valueOf(convertedTemp) + " 'C");
+                tv_feels.setText("Feels Like : " + String.valueOf(convertedFeels) + " 'C");
 
             }
 

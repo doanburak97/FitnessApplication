@@ -26,7 +26,7 @@ public class TimekeeperActivity extends AppCompatActivity {
 
         iv_restart = findViewById(R.id.iv_restart);
         iv_start = findViewById(R.id.iv_start);
-        iv_pause = findViewById(R.id.iv_pause);
+        //iv_pause = findViewById(R.id.iv_pause);
         tv_hour = findViewById(R.id.tv_hour);
         tv_minute = findViewById(R.id.tv_minute);
         tv_second = findViewById(R.id.tv_second);
@@ -184,7 +184,7 @@ public class TimekeeperActivity extends AppCompatActivity {
             }
         });
 
-        iv_pause.setOnClickListener(new View.OnClickListener() {
+        /*iv_pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -195,7 +195,7 @@ public class TimekeeperActivity extends AppCompatActivity {
 
             }
         });
-
+        */
 
     }
 

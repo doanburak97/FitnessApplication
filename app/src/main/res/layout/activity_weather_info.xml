@@ -42,27 +42,41 @@
 
         <ImageView
             android:id="@+id/iv_weatherIcon"
-            android:layout_width="250sp"
-            android:layout_height="250sp"
+            android:layout_width="225sp"
+            android:layout_height="225sp"
             android:layout_gravity="center"
             android:layout_marginTop="75sp"
             app:srcCompat="@drawable/cloud" />
 
-        <TextView
-            android:id="@+id/tv_weatherType"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
-            android:gravity="center"
-            android:text="WEATHER TYPE" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-        <TextView
-            android:id="@+id/tv_temp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
-            android:gravity="center"
-            android:text="TEMPERATURE" />
+            <TextView
+                android:id="@+id/tv_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginTop="30sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TEMPERATURE : 00 'C"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_feels"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginTop="30sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="FEELS LIKE : 00 'C"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
