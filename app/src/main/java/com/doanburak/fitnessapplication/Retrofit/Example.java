@@ -6,7 +6,7 @@ public class Example {
 
     @SerializedName("main")
     private Main main;
-
+    
     public Main getMain() {
         return main;
     }
@@ -14,5 +14,6 @@ public class Example {
     public void setMain(Main main) {
         this.main = main;
     }
+
 
 }

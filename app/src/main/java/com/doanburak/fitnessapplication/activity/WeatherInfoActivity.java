@@ -25,7 +25,7 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
 
     TextView tv_weatherType, tv_temp;
     ImageView iv_search;
-    EditText et_city;
+    ImageView iv_weatherIcon;
     Spinner sp_cities;
 
     @Override
@@ -33,12 +33,11 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_info);
 
-        //et_city = findViewById(R.id.et_city);
         sp_cities = findViewById(R.id.sp_cities);
         tv_weatherType = findViewById(R.id.tv_weatherType);
         tv_temp = findViewById(R.id.tv_temp);
         iv_search = findViewById(R.id.iv_search);
-
+        iv_weatherIcon = findViewById(R.id.iv_weatherIcon);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.cities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -70,6 +69,7 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
 
                 tv_temp.setText("Temp: " + response.body().getMain().getTemp());
                 tv_weatherType.setText("Feels: " + response.body().getMain().getFeels());
+                //iv_weatherIcon.setImageResource(response.body().getWeather().getIcon());
 
             }
 

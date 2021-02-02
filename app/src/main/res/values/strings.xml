@@ -2,7 +2,6 @@
     <string name="app_name">FitnessApplication</string>
 
     <string-array name="cities">
-        <item>london</item>
         <item>istanbul</item>
         <item>ankara</item>
         <item>izmir</item>
