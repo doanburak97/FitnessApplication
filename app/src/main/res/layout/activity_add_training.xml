@@ -4,4 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddTrainingActivity"/>
+    tools:context=".activity.AddTrainingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tv_trainingType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center|start"
+                android:text="Training Type :"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/sp_trainingType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tv_set"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center|start"
+                android:textSize="16sp"
+                android:text="Set :"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/sp_set"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tv_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center|start"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Repeat :" />
+
+            <Spinner
+                android:id="@+id/sp_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center|start"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Description  :" />
+
+            <Spinner
+                android:id="@+id/sp_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
