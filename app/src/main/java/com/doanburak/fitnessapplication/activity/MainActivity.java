@@ -1,9 +1,16 @@
 package com.doanburak.fitnessapplication.activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,12 +24,30 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+
+        String CHANNEL_ID = "FitnessApp";
+        String CHANNEL_NAME = "FitnessApp";
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
+                CHANNEL_NAME, NotificationManager.IMPORTANCE_LOW);
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.createNotificationChannel(channel);
+
+        String message = "Isn't it a great day to work out today?";
+        Notification notification = new Notification.Builder(this, CHANNEL_ID)
+                .setContentTitle("FitnessApp")
+                .setContentText(message)
+                .setSmallIcon(R.drawable.ic_baseline_message)
+                .setAutoCancel(true)
+                .build();
+        manager.notify(10, notification);
+
     }
 
     @Override
