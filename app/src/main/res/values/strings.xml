@@ -17,4 +17,31 @@
         <item>artvin</item>
     </string-array>
 
+    <string-array name="trainingType">
+        <item>Running</item>
+        <item>Cycle</item>
+        <item>Rowing-Oar</item>
+        <item>Natation</item>
+        <item>Skip Rope</item>
+        <item>Walking</item>
+        <item>Weight Lifting</item>
+    </string-array>
+
+    <string-array name="set">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="repeat">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+
 </resources>

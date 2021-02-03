@@ -56,6 +56,7 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
 
     }
 
+    //Calculate Kelvin To Degree
     private float convertKToC(float temp){
 
         float result = (float)(temp - 272.15);
