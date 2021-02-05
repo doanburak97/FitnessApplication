@@ -74,8 +74,8 @@ public class WeatherInfoActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
 
-                float convertedTemp = convertKToC(Float.valueOf(response.body().getMain().getTemp()));
-                float convertedFeels = convertKToC(Float.valueOf(response.body().getMain().getFeels()));
+                float convertedTemp = Math.round(convertKToC(Float.valueOf(response.body().getMain().getTemp())));
+                float convertedFeels = Math.round(convertKToC(Float.valueOf(response.body().getMain().getFeels())));
 
                 tv_temp.setText("Temperature : " + String.valueOf(convertedTemp) + " 'C");
                 tv_feels.setText("Feels Like : " + String.valueOf(convertedFeels) + " 'C");

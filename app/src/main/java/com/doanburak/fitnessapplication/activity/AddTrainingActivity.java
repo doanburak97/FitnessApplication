@@ -19,7 +19,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.UUID;
+
 public class AddTrainingActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    //UUID.randomUUID();
 
     Button btn_add, btn_back;
     Spinner sp_trainingType, sp_set, sp_repeat;
@@ -41,6 +45,7 @@ public class AddTrainingActivity extends AppCompatActivity implements AdapterVie
         et_desc = findViewById(R.id.et_desc);
         btn_add = findViewById(R.id.btn_add2);
         btn_back = findViewById(R.id.btn_back);
+
 
         //array adapter for training type spinner
         ArrayAdapter<CharSequence> trainingType_adapter = ArrayAdapter.createFromResource(this, R.array.trainingType, android.R.layout.simple_spinner_item);
