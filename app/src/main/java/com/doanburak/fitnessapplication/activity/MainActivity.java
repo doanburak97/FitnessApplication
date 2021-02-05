@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    public static FirebaseAuth mAuth;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
