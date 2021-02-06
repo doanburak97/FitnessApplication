@@ -23,8 +23,6 @@ import java.util.UUID;
 
 public class AddTrainingActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    //UUID.randomUUID();
-
     Button btn_add, btn_back;
     Spinner sp_trainingType, sp_set, sp_repeat;
     EditText et_desc;

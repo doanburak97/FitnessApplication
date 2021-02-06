@@ -184,19 +184,6 @@ public class TimekeeperActivity extends AppCompatActivity {
             }
         });
 
-        /*iv_pause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                threadMSec.interrupt();
-                threadSecond.interrupt();
-                threadMinute.interrupt();
-                threadHour.interrupt();
-
-            }
-        });
-        */
-
     }
 
 }
